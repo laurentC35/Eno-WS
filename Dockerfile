@@ -5,7 +5,7 @@ ADD https://github.com/laurentC35/Eno/releases/download/v2.0.1/eno-core.jar .
 RUN mvn install:install-file -Dfile=eno-core.jar -DgroupId=fr.insee.eno -DartifactId=eno-core -Dversion=2.0.1 -Dpackaging=jar
 WORKDIR /enows
 COPY ./ /enows/
-RUN mvn -B -f /enows/pom.xml package
+RUN mvn -B -f /enows/pom.xml install
 
 
 FROM tomcat:jre11-slim
